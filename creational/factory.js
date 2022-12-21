@@ -9,6 +9,64 @@ object that will be created.
 
 */
 
+class IceCreamFactory {
+  constructor() {
+    this.createIcecream = function(flavor) {
+      let icecream;
+      if (flavor === 'chocolate') {
+        icecream = new Chocolate();
+      } else if (flavor === 'vanilla') {
+        icecream = new Vanilla();
+      } else if (flavor === 'strawberry') {
+        icecream = new Strawberry();
+      }
+      return icecream;
+    }
+  }
+}
+
+class Chocolate {
+  constructor() {
+    this.icecreamFlavor = 'chocolate';
+    this.message = function() {
+      return `Ice cream flavor is ${this.icecreamFlavor}`;
+    }
+  }
+}
+
+class Vanilla {
+  constructor() {
+    this.icecreamFlavor = 'vanilla';
+    this.message = function() {
+      return `Ice cream flavor is ${this.icecreamFlavor}`;
+    }
+  }
+}
+
+class Strawberry {
+  constructor() {
+    this.icecreamFlavor = 'strawberry';
+    this.message = function() {
+      return `Ice cream flavor is ${this.icecreamFlavor}`;
+    }
+  }
+}
+
+// creating objects
+const iceCreamfactory = new IceCreamFactory();
+
+console.log('\n')
+const chocolate = iceCreamfactory.createIcecream('chocolate');
+const vanilla = iceCreamfactory.createIcecream('vanilla');
+const strawberry = iceCreamfactory.createIcecream('strawberry');
+
+console.log(chocolate.message()); 
+console.log(vanilla.message()); 
+console.log(strawberry.message()); 
+
+
+// ==================================
+
 function ToyFactory() {
   this.toy = ToyDuck;
 
