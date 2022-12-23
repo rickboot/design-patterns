@@ -7,7 +7,6 @@ use the 'new' keyword combined constructor methods of
 
 Since methods of constructor-created objects can share methods and
 properties via their prototype, thus saving memory.
-
 */
 
 // constructor function

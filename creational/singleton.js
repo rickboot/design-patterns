@@ -9,31 +9,32 @@ Uses - database drivers...
 */
 
 // Class Singleton with global instance and counter
-let instance = null;
-let counter = 0;
+// let instance = null;
+// let counter = 0;
 
 class Counter {
   constructor() {
-    if (instance) {
-      throw new Error('There can be only one!');
+    if (Counter.instance == null) {
+      this.counter = 0;
+      Counter.instance = this;
     }
-    instance = this;
+    return Counter.instance;    
   }
 
   static getInstance () {
-    return this;
+    return Counter.instance;
   }
 
   increment() {
-    counter += 1;
+    this.counter += 1;
   }
 
   decrement() {
-    counter -= 1;
+    this.counter -= 1;
   }
 }
 
-const myCounter = new Counter()
+const myCounter = new Counter();
 
 // ----------------------------
 
